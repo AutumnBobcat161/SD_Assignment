@@ -1,0 +1,516 @@
+{
+	"info": {
+		"_postman_id": "3009a70a-ece7-48ea-bb22-a46cd7a326ad",
+		"name": "Stack_Overflow_Petruta_George",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get user id 2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete user by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/delete/1",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create new user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idRole\": 1,\r\n    \"username\": \"maria\",\r\n    \"password\": \"pere\",\r\n    \"email\": \"ana@gmail.com\",\r\n    \"banned\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\":\r\n    {\r\n        \"idUser\": 3,\r\n        \"title\": \"Java\",\r\n        \"text\": \"gere?\",\r\n        \"creationDate\": \"2018-01-25T21:34:55\"\r\n    },\r\n    \"tags\": [\r\n        {\r\n            \"idTag\" : \"5\",\r\n            \"name\" : \"java\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/question/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"question",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add tag",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"java-fix\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tag/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tag",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\": 2,\r\n    \"idQuestion\": 4,\r\n    \"text\": \"perge\",\r\n    \"creationDate\": \"2018-01-25T21:34:55\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/answer/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"answer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user like answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\" : 3,\r\n    \"type\": 0,\r\n    \"idAnswer\": 11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/userLikeAnswer/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"userLikeAnswer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user like answer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\" : 3,\r\n    \"type\": 1,\r\n    \"idAnswer\": 11\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/userLikeAnswer/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"userLikeAnswer",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add user like question",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\" : 3,\r\n    \"type\": 1,\r\n    \"idQuestion\": 22\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/userLikeQuestion/create",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"userLikeQuestion",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/users/all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all questions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\":\r\n    {\r\n        \"idUser\": 1,\r\n        \"title\": \"Java\",\r\n        \"text\": \"pere\",\r\n        \"creationDate\": \"2018-01-25T21:34:55\"\r\n    },\r\n    \"tags\": [\r\n        {\r\n            \"idTag\" : \"5\",\r\n            \"name\" : \"java\"\r\n        },\r\n        {\r\n            \"idTag\" : \"7\",\r\n            \"name\" : \"java-error\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/question/all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"question",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all tags",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\" : \"java-error\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/tag/all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"tag",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all answers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"idUser\": 2,\r\n    \"idQuestion\": 4,\r\n    \"text\": \"perge\",\r\n    \"creationDate\": \"2018-01-25T21:34:55\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/answer/all",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"answer",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ban user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/ban/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"ban",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Unban user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/admin/unban/2",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"admin",
+						"unban",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login failed cause user not found",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"Ion\",\r\n    \"password\": \"maria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login failed cause wrong password",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"maria\",\r\n    \"password\": \"maria\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login failed cause banned",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"ana\",\r\n    \"password\": \"mere\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login successfully",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"maria\",\r\n    \"password\": \"pere\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/users/login",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "default"
+		}
+	]
+}

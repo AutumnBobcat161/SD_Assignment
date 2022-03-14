@@ -18,11 +18,14 @@ import java.util.stream.Collectors;
 @Service
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private UserRepository repository;
 
-    @Autowired
     private UserRepositoryAux repositoryAux;
+
+    public UserServiceImpl(UserRepository repository, UserRepositoryAux repositoryAux) {
+        this.repository = repository;
+        this.repositoryAux = repositoryAux;
+    }
 
     @Override
     public User getUserById(int id) {

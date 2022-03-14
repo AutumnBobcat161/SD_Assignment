@@ -19,20 +19,24 @@ import java.util.stream.Collectors;
 @Service
 public class QuestionServiceImpl implements QuestionService{
 
-    @Autowired
     private TagService tagService;
 
-    @Autowired
     private QuestionTagServiceImpl questionTagService;
 
-    @Autowired
     private UserLikeQuestionRepository userLikeQuestionRepository;
 
-    @Autowired
     private QuestionRepository questionRepository;
 
-    @Autowired
     private AnswerService answerService;
+
+    public QuestionServiceImpl(TagService tagService, QuestionTagServiceImpl questionTagService,
+                               UserLikeQuestionRepository userLikeQuestionRepository, QuestionRepository questionRepository, AnswerService answerService) {
+        this.tagService = tagService;
+        this.questionTagService = questionTagService;
+        this.userLikeQuestionRepository = userLikeQuestionRepository;
+        this.questionRepository = questionRepository;
+        this.answerService = answerService;
+    }
 
     @Override
     public QuestionResponse getQuestionById(int id) {

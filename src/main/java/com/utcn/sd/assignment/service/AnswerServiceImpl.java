@@ -17,11 +17,14 @@ import java.util.stream.Collectors;
 @Service
 public class AnswerServiceImpl implements AnswerService {
 
-    @Autowired
     private AnswerRepository answerRepository;
 
-    @Autowired
     private UserLikeAnswerRepository userLikeAnswerRepository;
+
+    public AnswerServiceImpl(AnswerRepository answerRepository, UserLikeAnswerRepository userLikeAnswerRepository) {
+        this.answerRepository = answerRepository;
+        this.userLikeAnswerRepository = userLikeAnswerRepository;
+    }
 
     @Override
     public AnswerResponse getAnswerById(int id) {
