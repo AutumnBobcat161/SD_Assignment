@@ -1,8 +1,8 @@
-CREATE DATABASE  IF NOT EXISTS `stack_overflow` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
-USE `stack_overflow`;
+CREATE DATABASE  IF NOT EXISTS `stack_overflow_pgc` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
+USE `stack_overflow_pgc`;
 -- MySQL dump 10.13  Distrib 8.0.28, for Win64 (x86_64)
 --
--- Host: 127.0.0.1    Database: stack_overflow
+-- Host: 127.0.0.1    Database: stack_overflow_pgc
 -- ------------------------------------------------------
 -- Server version	8.0.28
 
