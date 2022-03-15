@@ -1,6 +1,5 @@
 package com.utcn.sd.assignment.controller;
 
-import com.utcn.sd.assignment.model.User;
 import com.utcn.sd.assignment.service.user.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
