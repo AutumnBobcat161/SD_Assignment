@@ -7,9 +7,12 @@ import com.utcn.sd.assignment.model.User;
 import com.utcn.sd.assignment.model.UserLoginRequest;
 import com.utcn.sd.assignment.repository.UserRepository;
 import com.utcn.sd.assignment.repository.UserRepositoryAux;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.utcn.sd.assignment.service.EmailServiceImpl;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
+import java.io.IOException;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -88,6 +91,12 @@ public class UserServiceImpl implements UserService {
     public void banUser(int id) {
         User user = getUserById(id);
         user.setBanned(true);
+        try {
+            EmailServiceImpl emailService = new EmailServiceImpl();
+            emailService.sendSimpleMessage(user.getEmail(), "Banned account", "Your account was banned!");
+        } catch (MessagingException | IOException e) {
+            e.printStackTrace();
+        }
         createUser(user);
     }
 
@@ -95,6 +104,12 @@ public class UserServiceImpl implements UserService {
     public void unbanUser(int id) {
         User user = getUserById(id);
         user.setBanned(false);
+        try {
+            EmailServiceImpl emailService = new EmailServiceImpl();
+            emailService.sendSimpleMessage(user.getEmail(), "Unbanned account", "Your account is no longer banned!");
+        } catch (MessagingException | IOException e) {
+            e.printStackTrace();
+        }
         createUser(user);
     }
 
