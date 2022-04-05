@@ -25,6 +25,7 @@ public class UserController {
 
     @PostMapping("/create")
     public ResponseEntity<User> createUser(@RequestBody User User) {
+        User.setBanned(false);
         return new ResponseEntity<>(service.createUser(User), HttpStatus.CREATED);
     }
 
