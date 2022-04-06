@@ -13,7 +13,7 @@ import java.util.Optional;
 public class UserRepositoryAux {
 
     private static final String GET_USER_BY_EMAIL_QUERY = "SELECT * FROM USER WHERE email = ?";
-    private static final String GET_USER_BY_USERNAME_QUERY = "SELECT * FROM USER WHERE username = ? LIMIT 1";
+    private static final String GET_USER_BY_USERNAME_QUERY = "SELECT * FROM USER WHERE username = ?";
 
     private final JdbcTemplate jdbcTemplate;
     private final UserRowMapper rowMapper;

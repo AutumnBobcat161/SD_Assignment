@@ -15,7 +15,7 @@ public class EmailServiceImpl {
         JavaMailSender emailSender = getJavaMailSender();
         SimpleMailMessage message = new SimpleMailMessage();
 
-        message.setFrom("tomaspetruta21@gmail.com");
+        message.setFrom("pgc.so.owner@gmail.com");
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
@@ -29,7 +29,7 @@ public class EmailServiceImpl {
         mailSender.setHost("smtp.gmail.com");
         mailSender.setPort(587);
 
-        mailSender.setUsername("pgc.so.owner@gmail.com");
+        mailSender.setUsername("pgc.so.owner");
         mailSender.setPassword("stackoverflow");
 
         Properties props = mailSender.getJavaMailProperties();
