@@ -18,9 +18,7 @@ public class EmailServiceImpl {
         message.setFrom("pgc.so.owner@gmail.com");
         message.setTo(to);
         message.setSubject(subject);
-        message.setText(text);
-
-        emailSender.send(message);
+        message.setText(text);        emailSender.send(message);
     }
 
     @Bean
